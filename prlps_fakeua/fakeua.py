@@ -41,10 +41,14 @@ def is_writable_directory(path: str | Path) -> bool:
 
 
 def get_path_for_data() -> Path:
+    fallback_file = Path(__file__).parent.resolve() / 'browsers.json'
+    temp_file = Path(gettempdir()).resolve() / 'browsers.json'
     if is_writable_directory(Path(__file__).parent):
-        data_path = Path(__file__).parent.resolve() / 'browsers.json'
+        data_path = fallback_file
     else:
-        data_path = Path(gettempdir()).resolve() / 'browsers.json'
+        temp_file.touch(mode=0o777, exist_ok=True)
+        fallback_file.write_text(temp_file.read_text())
+        data_path = temp_file
     return data_path
 
 
