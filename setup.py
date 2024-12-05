@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 setup(
     name='prlps_fakeua',
@@ -13,6 +13,9 @@ setup(
     install_requires=[
         'httpx'
     ],
+    package_data={
+        'prlps_fakeua': ['browsers.json'],
+    },
     python_requires='>=3.10',
     classifiers=[
         'Development Status :: 4 - Beta',
