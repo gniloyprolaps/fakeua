@@ -47,7 +47,7 @@ def get_path_for_data() -> Path:
         data_path = fallback_file
     else:
         temp_file.touch(mode=0o777, exist_ok=True)
-        fallback_file.write_text(temp_file.read_text())
+        temp_file.write_text(fallback_file.read_text())
         data_path = temp_file
     return data_path
 
