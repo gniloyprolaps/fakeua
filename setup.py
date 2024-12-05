@@ -10,9 +10,7 @@ setup(
     description='генерация заголовков браузеров и user-agent',
     long_description=open('README.md', encoding='utf-8').read(),
     long_description_content_type='text/markdown',
-    install_requires=[
-        'httpx'
-    ],
+    install_requires=['httpx'],
     package_data={
         'prlps_fakeua': ['browsers.json'],
     },
