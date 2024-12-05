@@ -2,10 +2,10 @@ from setuptools import find_packages, setup
 
 setup(
     name='prlps_fakeua',
-    version='0.0.1b',
+    version='0.0.1',
     author='prolapser',
     packages=find_packages(),
-    url='https://github.com/prolapser/prlps_fakeua',
+    url='https://github.com/gniloyprolaps/fakeua',
     license='LICENSE.txt',
     description='генерация заголовков браузеров и user-agent',
     long_description=open('README.md', encoding='utf-8').read(),
